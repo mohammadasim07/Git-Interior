@@ -1,179 +1,527 @@
-<svg fill="none" viewBox="0 0 820 180" width="100%" height="180" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 800 185" width="100%" height="185" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .bg { fill: #0b0f19; stroke: #1e293b; stroke-width: 1; rx: 12; }
-      .header-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #94a3b8; }
-      .stat-text { font-family: Consolas, 'Courier New', monospace; font-size: 11.5px; font-weight: 600; fill: #38bdf8; }
-      .grid-dot { rx: 2.5; width: 10px; height: 10px; }
-      .c0 { fill: #161b22; }
-      .c1 { fill: #0e4429; }
-      .c2 { fill: #006d32; }
-      .c3 { fill: #26a641; }
-      .c4 { fill: #39d353; }
-      
-      /* Animated Snake Movement */
-      @keyframes moveSnakeHead {
-        0%   { transform: translate(120px, 60px); }
-        20%  { transform: translate(320px, 60px); }
-        35%  { transform: translate(320px, 100px); }
-        55%  { transform: translate(560px, 100px); }
-        70%  { transform: translate(560px, 130px); }
-        85%  { transform: translate(750px, 130px); }
-        92%  { transform: translate(750px, 60px); }
-        100% { transform: translate(120px, 60px); }
-      }
-      @keyframes moveSnakeBody1 {
-        0%   { transform: translate(105px, 60px); }
-        20%  { transform: translate(305px, 60px); }
-        35%  { transform: translate(320px, 85px); }
-        55%  { transform: translate(545px, 100px); }
-        70%  { transform: translate(560px, 115px); }
-        85%  { transform: translate(735px, 130px); }
-        92%  { transform: translate(750px, 75px); }
-        100% { transform: translate(105px, 60px); }
-      }
-      @keyframes moveSnakeBody2 {
-        0%   { transform: translate(90px, 60px); }
-        20%  { transform: translate(290px, 60px); }
-        35%  { transform: translate(320px, 70px); }
-        55%  { transform: translate(530px, 100px); }
-        70%  { transform: translate(560px, 100px); }
-        85%  { transform: translate(720px, 130px); }
-        92%  { transform: translate(750px, 90px); }
-        100% { transform: translate(90px, 60px); }
-      }
-      @keyframes pulseGlow {
-        0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 4px #38bdf8); }
-        50% { opacity: 1; filter: drop-shadow(0 0 8px #39d353); }
-      }
-      .snake-head {
-        fill: #38bdf8;
-        animation: moveSnakeHead 12s cubic-bezier(0.4, 0, 0.2, 1) infinite, pulseGlow 2s infinite;
-        rx: 3.5;
-        width: 12px;
-        height: 12px;
-      }
-      .snake-b1 {
-        fill: #34d399;
-        animation: moveSnakeBody1 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        rx: 3;
-        width: 11px;
-        height: 11px;
-      }
-      .snake-b2 {
-        fill: #10b981;
-        animation: moveSnakeBody2 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        rx: 2.5;
-        width: 10px;
-        height: 10px;
-      }
+@keyframes snakeMove {
+  0.00% { transform: translate(50px, 70px); }
+  1.61% { transform: translate(80px, 70px); }
+  5.65% { transform: translate(155px, 70px); }
+  7.26% { transform: translate(155px, 100px); }
+  10.48% { transform: translate(215px, 100px); }
+  12.10% { transform: translate(215px, 130px); }
+  15.32% { transform: translate(275px, 130px); }
+  17.74% { transform: translate(275px, 85px); }
+  21.77% { transform: translate(350px, 85px); }
+  25.00% { transform: translate(410px, 85px); }
+  26.61% { transform: translate(410px, 115px); }
+  29.84% { transform: translate(470px, 115px); }
+  33.06% { transform: translate(530px, 115px); }
+  35.48% { transform: translate(530px, 70px); }
+  39.52% { transform: translate(605px, 70px); }
+  41.94% { transform: translate(605px, 115px); }
+  45.16% { transform: translate(665px, 115px); }
+  47.58% { transform: translate(665px, 70px); }
+  49.19% { transform: translate(695px, 70px); }
+  50.81% { transform: translate(695px, 100px); }
+  51.61% { transform: translate(710px, 100px); }
+  53.23% { transform: translate(710px, 130px); }
+  54.84% { transform: translate(680px, 130px); }
+  55.65% { transform: translate(680px, 145px); }
+  57.26% { transform: translate(710px, 145px); }
+  58.06% { transform: translate(725px, 145px); }
+  62.90% { transform: translate(725px, 55px); }
+  99.19% { transform: translate(50px, 55px); }
+  100.00% { transform: translate(50px, 70px); }
+}
+@keyframes eat_2_1 {
+  0%, 1.36% { fill: #39d353; }
+  1.61% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  2.21%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_7_3 {
+  0%, 7.01% { fill: #39d353; }
+  7.26% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  7.86%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_11_3 {
+  0%, 10.23% { fill: #39d353; }
+  10.48% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  11.08%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_11_5 {
+  0%, 11.85% { fill: #39d353; }
+  12.10% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  12.70%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_15_2 {
+  0%, 17.49% { fill: #39d353; }
+  17.74% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  18.34%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_20_2 {
+  0%, 21.52% { fill: #39d353; }
+  21.77% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  22.37%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_24_4 {
+  0%, 26.36% { fill: #39d353; }
+  26.61% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  27.21%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_28_4 {
+  0%, 29.59% { fill: #39d353; }
+  29.84% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  30.44%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_32_1 {
+  0%, 35.23% { fill: #39d353; }
+  35.48% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  36.08%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_37_1 {
+  0%, 39.27% { fill: #39d353; }
+  39.52% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  40.12%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_41_4 {
+  0%, 44.91% { fill: #39d353; }
+  45.16% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  45.76%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_41_1 {
+  0%, 47.33% { fill: #39d353; }
+  47.58% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  48.18%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_43_1 {
+  0%, 48.94% { fill: #39d353; }
+  49.19% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  49.79%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_43_3 {
+  0%, 50.56% { fill: #39d353; }
+  50.81% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  51.41%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_44_3 {
+  0%, 51.36% { fill: #39d353; }
+  51.61% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  52.21%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_44_5 {
+  0%, 52.98% { fill: #39d353; }
+  53.23% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  53.83%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_42_5 {
+  0%, 54.59% { fill: #39d353; }
+  54.84% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  55.44%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_42_6 {
+  0%, 55.40% { fill: #39d353; }
+  55.65% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  56.25%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+@keyframes eat_44_6 {
+  0%, 57.01% { fill: #39d353; }
+  57.26% { fill: #ffffff; filter: drop-shadow(0 0 6px #ffffff); }
+  57.86%, 96.0% { fill: #161b22; filter: none; }
+  98.0%, 100.0% { fill: #39d353; }
+}
+
+  .bg { fill: #0b0f19; stroke: #1e293b; stroke-width: 1; rx: 12; }
+  .grid-cell { rx: 2.5; width: 11px; height: 11px; }
+  .empty-cell { fill: #161b22; }
+  .snake-seg {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    rx: 3;
+    animation: snakeMove 14s linear infinite;
+  }
+  .snake-h  { fill: #38bdf8; filter: drop-shadow(0 0 6px #38bdf8); }
+  .snake-s1 { fill: #34d399; animation-delay: -0.12s; }
+  .snake-s2 { fill: #10b981; animation-delay: -0.24s; }
+  .snake-s3 { fill: #059669; animation-delay: -0.36s; }
+  .snake-s4 { fill: #047857; animation-delay: -0.48s; }
+
     </style>
   </defs>
 
   <!-- Container Box -->
-  <rect width="820" height="180" class="bg" />
+  <rect width="800" height="185" class="bg" />
 
-  <!-- Top Header Info -->
-  <g transform="translate(30, 28)">
-    <text x="0" y="0" class="header-text">CONTRIBUTION ACTIVITY &amp; COMMIT VELOCITY</text>
-    <text x="760" y="0" class="stat-text" text-anchor="end">133+ Commits · Active Streak 🚀</text>
+  <!-- Telemetry Header -->
+  <g transform="translate(30, 26)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" font-weight="600" fill="#94a3b8">CONTRIBUTION ACTIVITY &amp; COMMIT EATING GAME</text>
+    <text x="740" y="0" font-family="Consolas, monospace" font-size="11.5" font-weight="600" fill="#38bdf8" text-anchor="end">133+ Commits · Snake Eating Commits 🐍</text>
   </g>
 
   <!-- Month Labels -->
-  <g transform="translate(48, 48)" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5">
-    <text x="0">Oct</text>
-    <text x="65">Nov</text>
-    <text x="130">Dec</text>
-    <text x="195">Jan</text>
-    <text x="260">Feb</text>
-    <text x="325">Mar</text>
-    <text x="390">Apr</text>
-    <text x="455">May</text>
-    <text x="520">Jun</text>
-    <text x="585">Jul</text>
-    <text x="650">Aug</text>
-    <text x="715">Sep</text>
+  <g transform="translate(50, 46)" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9">
+    <text x="0">Oct</text><text x="60">Nov</text><text x="120">Dec</text><text x="180">Jan</text><text x="240">Feb</text><text x="300">Mar</text><text x="360">Apr</text><text x="420">May</text><text x="480">Jun</text><text x="540">Jul</text><text x="600">Aug</text><text x="660">Sep</text>
   </g>
 
-  <!-- Contribution Grid Container (7 rows x 50 columns) -->
-  <g id="grid" transform="translate(48, 56)">
-    <!-- Generated Realistic Grid Pattern matching his active dots -->
-    <!-- Column generation via Python-like compact pattern -->
-    <!-- Week 1 - 4 (Oct) -->
-    <rect x="0" y="0" class="grid-dot c0" /><rect x="0" y="14" class="grid-dot c0" /><rect x="0" y="28" class="grid-dot c0" /><rect x="0" y="42" class="grid-dot c0" /><rect x="0" y="56" class="grid-dot c0" /><rect x="0" y="70" class="grid-dot c0" /><rect x="0" y="84" class="grid-dot c0" />
-    <rect x="15" y="0" class="grid-dot c0" /><rect x="15" y="14" class="grid-dot c0" /><rect x="15" y="28" class="grid-dot c0" /><rect x="15" y="42" class="grid-dot c0" /><rect x="15" y="56" class="grid-dot c0" /><rect x="15" y="70" class="grid-dot c0" /><rect x="15" y="84" class="grid-dot c0" />
-    <rect x="30" y="0" class="grid-dot c0" /><rect x="30" y="14" class="grid-dot c3" /><rect x="30" y="28" class="grid-dot c0" /><rect x="30" y="42" class="grid-dot c4" /><rect x="30" y="56" class="grid-dot c0" /><rect x="30" y="70" class="grid-dot c0" /><rect x="30" y="84" class="grid-dot c0" />
-    <rect x="45" y="0" class="grid-dot c0" /><rect x="45" y="14" class="grid-dot c2" /><rect x="45" y="28" class="grid-dot c0" /><rect x="45" y="42" class="grid-dot c0" /><rect x="45" y="56" class="grid-dot c0" /><rect x="45" y="70" class="grid-dot c0" /><rect x="45" y="84" class="grid-dot c0" />
+  <!-- Grid of Commits -->
+  <g id="grid">
+    <rect x="50" y="55" class="grid-cell empty-cell" />
+    <rect x="50" y="70" class="grid-cell empty-cell" />
+    <rect x="50" y="85" class="grid-cell empty-cell" />
+    <rect x="50" y="100" class="grid-cell empty-cell" />
+    <rect x="50" y="115" class="grid-cell empty-cell" />
+    <rect x="50" y="130" class="grid-cell empty-cell" />
+    <rect x="50" y="145" class="grid-cell empty-cell" />
+    <rect x="65" y="55" class="grid-cell empty-cell" />
+    <rect x="65" y="70" class="grid-cell empty-cell" />
+    <rect x="65" y="85" class="grid-cell empty-cell" />
+    <rect x="65" y="100" class="grid-cell empty-cell" />
+    <rect x="65" y="115" class="grid-cell empty-cell" />
+    <rect x="65" y="130" class="grid-cell empty-cell" />
+    <rect x="65" y="145" class="grid-cell empty-cell" />
+    <rect x="80" y="55" class="grid-cell empty-cell" />
+    <rect x="80" y="70" class="grid-cell" style="animation: eat_2_1 14s linear infinite; fill: #39d353;" />
+    <rect x="80" y="85" class="grid-cell empty-cell" />
+    <rect x="80" y="100" class="grid-cell empty-cell" />
+    <rect x="80" y="115" class="grid-cell empty-cell" />
+    <rect x="80" y="130" class="grid-cell empty-cell" />
+    <rect x="80" y="145" class="grid-cell empty-cell" />
+    <rect x="95" y="55" class="grid-cell empty-cell" />
+    <rect x="95" y="70" class="grid-cell empty-cell" />
+    <rect x="95" y="85" class="grid-cell empty-cell" />
+    <rect x="95" y="100" class="grid-cell empty-cell" />
+    <rect x="95" y="115" class="grid-cell empty-cell" />
+    <rect x="95" y="130" class="grid-cell empty-cell" />
+    <rect x="95" y="145" class="grid-cell empty-cell" />
+    <rect x="110" y="55" class="grid-cell empty-cell" />
+    <rect x="110" y="70" class="grid-cell empty-cell" />
+    <rect x="110" y="85" class="grid-cell" fill="#006d32" />
+    <rect x="110" y="100" class="grid-cell empty-cell" />
+    <rect x="110" y="115" class="grid-cell empty-cell" />
+    <rect x="110" y="130" class="grid-cell empty-cell" />
+    <rect x="110" y="145" class="grid-cell empty-cell" />
+    <rect x="125" y="55" class="grid-cell empty-cell" />
+    <rect x="125" y="70" class="grid-cell empty-cell" />
+    <rect x="125" y="85" class="grid-cell empty-cell" />
+    <rect x="125" y="100" class="grid-cell empty-cell" />
+    <rect x="125" y="115" class="grid-cell empty-cell" />
+    <rect x="125" y="130" class="grid-cell empty-cell" />
+    <rect x="125" y="145" class="grid-cell empty-cell" />
+    <rect x="140" y="55" class="grid-cell empty-cell" />
+    <rect x="140" y="70" class="grid-cell empty-cell" />
+    <rect x="140" y="85" class="grid-cell empty-cell" />
+    <rect x="140" y="100" class="grid-cell empty-cell" />
+    <rect x="140" y="115" class="grid-cell empty-cell" />
+    <rect x="140" y="130" class="grid-cell empty-cell" />
+    <rect x="140" y="145" class="grid-cell empty-cell" />
+    <rect x="155" y="55" class="grid-cell empty-cell" />
+    <rect x="155" y="70" class="grid-cell empty-cell" />
+    <rect x="155" y="85" class="grid-cell empty-cell" />
+    <rect x="155" y="100" class="grid-cell" style="animation: eat_7_3 14s linear infinite; fill: #39d353;" />
+    <rect x="155" y="115" class="grid-cell empty-cell" />
+    <rect x="155" y="130" class="grid-cell empty-cell" />
+    <rect x="155" y="145" class="grid-cell empty-cell" />
+    <rect x="170" y="55" class="grid-cell empty-cell" />
+    <rect x="170" y="70" class="grid-cell empty-cell" />
+    <rect x="170" y="85" class="grid-cell empty-cell" />
+    <rect x="170" y="100" class="grid-cell empty-cell" />
+    <rect x="170" y="115" class="grid-cell empty-cell" />
+    <rect x="170" y="130" class="grid-cell empty-cell" />
+    <rect x="170" y="145" class="grid-cell empty-cell" />
+    <rect x="185" y="55" class="grid-cell empty-cell" />
+    <rect x="185" y="70" class="grid-cell empty-cell" />
+    <rect x="185" y="85" class="grid-cell empty-cell" />
+    <rect x="185" y="100" class="grid-cell empty-cell" />
+    <rect x="185" y="115" class="grid-cell" fill="#006d32" />
+    <rect x="185" y="130" class="grid-cell empty-cell" />
+    <rect x="185" y="145" class="grid-cell empty-cell" />
+    <rect x="200" y="55" class="grid-cell empty-cell" />
+    <rect x="200" y="70" class="grid-cell empty-cell" />
+    <rect x="200" y="85" class="grid-cell empty-cell" />
+    <rect x="200" y="100" class="grid-cell empty-cell" />
+    <rect x="200" y="115" class="grid-cell empty-cell" />
+    <rect x="200" y="130" class="grid-cell empty-cell" />
+    <rect x="200" y="145" class="grid-cell empty-cell" />
+    <rect x="215" y="55" class="grid-cell empty-cell" />
+    <rect x="215" y="70" class="grid-cell empty-cell" />
+    <rect x="215" y="85" class="grid-cell empty-cell" />
+    <rect x="215" y="100" class="grid-cell" style="animation: eat_11_3 14s linear infinite; fill: #39d353;" />
+    <rect x="215" y="115" class="grid-cell empty-cell" />
+    <rect x="215" y="130" class="grid-cell" style="animation: eat_11_5 14s linear infinite; fill: #39d353;" />
+    <rect x="215" y="145" class="grid-cell empty-cell" />
+    <rect x="230" y="55" class="grid-cell empty-cell" />
+    <rect x="230" y="70" class="grid-cell empty-cell" />
+    <rect x="230" y="85" class="grid-cell empty-cell" />
+    <rect x="230" y="100" class="grid-cell empty-cell" />
+    <rect x="230" y="115" class="grid-cell empty-cell" />
+    <rect x="230" y="130" class="grid-cell empty-cell" />
+    <rect x="230" y="145" class="grid-cell empty-cell" />
+    <rect x="245" y="55" class="grid-cell empty-cell" />
+    <rect x="245" y="70" class="grid-cell empty-cell" />
+    <rect x="245" y="85" class="grid-cell empty-cell" />
+    <rect x="245" y="100" class="grid-cell empty-cell" />
+    <rect x="245" y="115" class="grid-cell empty-cell" />
+    <rect x="245" y="130" class="grid-cell empty-cell" />
+    <rect x="245" y="145" class="grid-cell empty-cell" />
+    <rect x="260" y="55" class="grid-cell empty-cell" />
+    <rect x="260" y="70" class="grid-cell empty-cell" />
+    <rect x="260" y="85" class="grid-cell empty-cell" />
+    <rect x="260" y="100" class="grid-cell empty-cell" />
+    <rect x="260" y="115" class="grid-cell empty-cell" />
+    <rect x="260" y="130" class="grid-cell empty-cell" />
+    <rect x="260" y="145" class="grid-cell empty-cell" />
+    <rect x="275" y="55" class="grid-cell empty-cell" />
+    <rect x="275" y="70" class="grid-cell empty-cell" />
+    <rect x="275" y="85" class="grid-cell" style="animation: eat_15_2 14s linear infinite; fill: #39d353;" />
+    <rect x="275" y="100" class="grid-cell empty-cell" />
+    <rect x="275" y="115" class="grid-cell empty-cell" />
+    <rect x="275" y="130" class="grid-cell empty-cell" />
+    <rect x="275" y="145" class="grid-cell empty-cell" />
+    <rect x="290" y="55" class="grid-cell empty-cell" />
+    <rect x="290" y="70" class="grid-cell empty-cell" />
+    <rect x="290" y="85" class="grid-cell empty-cell" />
+    <rect x="290" y="100" class="grid-cell empty-cell" />
+    <rect x="290" y="115" class="grid-cell empty-cell" />
+    <rect x="290" y="130" class="grid-cell empty-cell" />
+    <rect x="290" y="145" class="grid-cell" fill="#006d32" />
+    <rect x="305" y="55" class="grid-cell empty-cell" />
+    <rect x="305" y="70" class="grid-cell empty-cell" />
+    <rect x="305" y="85" class="grid-cell empty-cell" />
+    <rect x="305" y="100" class="grid-cell empty-cell" />
+    <rect x="305" y="115" class="grid-cell empty-cell" />
+    <rect x="305" y="130" class="grid-cell empty-cell" />
+    <rect x="305" y="145" class="grid-cell empty-cell" />
+    <rect x="320" y="55" class="grid-cell empty-cell" />
+    <rect x="320" y="70" class="grid-cell empty-cell" />
+    <rect x="320" y="85" class="grid-cell empty-cell" />
+    <rect x="320" y="100" class="grid-cell empty-cell" />
+    <rect x="320" y="115" class="grid-cell empty-cell" />
+    <rect x="320" y="130" class="grid-cell empty-cell" />
+    <rect x="320" y="145" class="grid-cell empty-cell" />
+    <rect x="335" y="55" class="grid-cell empty-cell" />
+    <rect x="335" y="70" class="grid-cell empty-cell" />
+    <rect x="335" y="85" class="grid-cell empty-cell" />
+    <rect x="335" y="100" class="grid-cell empty-cell" />
+    <rect x="335" y="115" class="grid-cell empty-cell" />
+    <rect x="335" y="130" class="grid-cell empty-cell" />
+    <rect x="335" y="145" class="grid-cell empty-cell" />
+    <rect x="350" y="55" class="grid-cell empty-cell" />
+    <rect x="350" y="70" class="grid-cell empty-cell" />
+    <rect x="350" y="85" class="grid-cell" style="animation: eat_20_2 14s linear infinite; fill: #39d353;" />
+    <rect x="350" y="100" class="grid-cell empty-cell" />
+    <rect x="350" y="115" class="grid-cell empty-cell" />
+    <rect x="350" y="130" class="grid-cell empty-cell" />
+    <rect x="350" y="145" class="grid-cell empty-cell" />
+    <rect x="365" y="55" class="grid-cell empty-cell" />
+    <rect x="365" y="70" class="grid-cell empty-cell" />
+    <rect x="365" y="85" class="grid-cell empty-cell" />
+    <rect x="365" y="100" class="grid-cell empty-cell" />
+    <rect x="365" y="115" class="grid-cell empty-cell" />
+    <rect x="365" y="130" class="grid-cell empty-cell" />
+    <rect x="365" y="145" class="grid-cell empty-cell" />
+    <rect x="380" y="55" class="grid-cell empty-cell" />
+    <rect x="380" y="70" class="grid-cell" fill="#006d32" />
+    <rect x="380" y="85" class="grid-cell empty-cell" />
+    <rect x="380" y="100" class="grid-cell empty-cell" />
+    <rect x="380" y="115" class="grid-cell empty-cell" />
+    <rect x="380" y="130" class="grid-cell empty-cell" />
+    <rect x="380" y="145" class="grid-cell empty-cell" />
+    <rect x="395" y="55" class="grid-cell empty-cell" />
+    <rect x="395" y="70" class="grid-cell empty-cell" />
+    <rect x="395" y="85" class="grid-cell empty-cell" />
+    <rect x="395" y="100" class="grid-cell empty-cell" />
+    <rect x="395" y="115" class="grid-cell empty-cell" />
+    <rect x="395" y="130" class="grid-cell empty-cell" />
+    <rect x="395" y="145" class="grid-cell empty-cell" />
+    <rect x="410" y="55" class="grid-cell empty-cell" />
+    <rect x="410" y="70" class="grid-cell empty-cell" />
+    <rect x="410" y="85" class="grid-cell empty-cell" />
+    <rect x="410" y="100" class="grid-cell empty-cell" />
+    <rect x="410" y="115" class="grid-cell" style="animation: eat_24_4 14s linear infinite; fill: #39d353;" />
+    <rect x="410" y="130" class="grid-cell empty-cell" />
+    <rect x="410" y="145" class="grid-cell empty-cell" />
+    <rect x="425" y="55" class="grid-cell empty-cell" />
+    <rect x="425" y="70" class="grid-cell empty-cell" />
+    <rect x="425" y="85" class="grid-cell empty-cell" />
+    <rect x="425" y="100" class="grid-cell empty-cell" />
+    <rect x="425" y="115" class="grid-cell empty-cell" />
+    <rect x="425" y="130" class="grid-cell empty-cell" />
+    <rect x="425" y="145" class="grid-cell empty-cell" />
+    <rect x="440" y="55" class="grid-cell empty-cell" />
+    <rect x="440" y="70" class="grid-cell empty-cell" />
+    <rect x="440" y="85" class="grid-cell empty-cell" />
+    <rect x="440" y="100" class="grid-cell empty-cell" />
+    <rect x="440" y="115" class="grid-cell empty-cell" />
+    <rect x="440" y="130" class="grid-cell empty-cell" />
+    <rect x="440" y="145" class="grid-cell empty-cell" />
+    <rect x="455" y="55" class="grid-cell empty-cell" />
+    <rect x="455" y="70" class="grid-cell empty-cell" />
+    <rect x="455" y="85" class="grid-cell empty-cell" />
+    <rect x="455" y="100" class="grid-cell empty-cell" />
+    <rect x="455" y="115" class="grid-cell empty-cell" />
+    <rect x="455" y="130" class="grid-cell empty-cell" />
+    <rect x="455" y="145" class="grid-cell empty-cell" />
+    <rect x="470" y="55" class="grid-cell empty-cell" />
+    <rect x="470" y="70" class="grid-cell empty-cell" />
+    <rect x="470" y="85" class="grid-cell empty-cell" />
+    <rect x="470" y="100" class="grid-cell empty-cell" />
+    <rect x="470" y="115" class="grid-cell" style="animation: eat_28_4 14s linear infinite; fill: #39d353;" />
+    <rect x="470" y="130" class="grid-cell empty-cell" />
+    <rect x="470" y="145" class="grid-cell empty-cell" />
+    <rect x="485" y="55" class="grid-cell empty-cell" />
+    <rect x="485" y="70" class="grid-cell empty-cell" />
+    <rect x="485" y="85" class="grid-cell empty-cell" />
+    <rect x="485" y="100" class="grid-cell empty-cell" />
+    <rect x="485" y="115" class="grid-cell empty-cell" />
+    <rect x="485" y="130" class="grid-cell empty-cell" />
+    <rect x="485" y="145" class="grid-cell empty-cell" />
+    <rect x="500" y="55" class="grid-cell" fill="#006d32" />
+    <rect x="500" y="70" class="grid-cell empty-cell" />
+    <rect x="500" y="85" class="grid-cell empty-cell" />
+    <rect x="500" y="100" class="grid-cell empty-cell" />
+    <rect x="500" y="115" class="grid-cell empty-cell" />
+    <rect x="500" y="130" class="grid-cell empty-cell" />
+    <rect x="500" y="145" class="grid-cell empty-cell" />
+    <rect x="515" y="55" class="grid-cell empty-cell" />
+    <rect x="515" y="70" class="grid-cell empty-cell" />
+    <rect x="515" y="85" class="grid-cell empty-cell" />
+    <rect x="515" y="100" class="grid-cell empty-cell" />
+    <rect x="515" y="115" class="grid-cell empty-cell" />
+    <rect x="515" y="130" class="grid-cell empty-cell" />
+    <rect x="515" y="145" class="grid-cell empty-cell" />
+    <rect x="530" y="55" class="grid-cell empty-cell" />
+    <rect x="530" y="70" class="grid-cell" style="animation: eat_32_1 14s linear infinite; fill: #39d353;" />
+    <rect x="530" y="85" class="grid-cell empty-cell" />
+    <rect x="530" y="100" class="grid-cell empty-cell" />
+    <rect x="530" y="115" class="grid-cell empty-cell" />
+    <rect x="530" y="130" class="grid-cell empty-cell" />
+    <rect x="530" y="145" class="grid-cell empty-cell" />
+    <rect x="545" y="55" class="grid-cell empty-cell" />
+    <rect x="545" y="70" class="grid-cell empty-cell" />
+    <rect x="545" y="85" class="grid-cell empty-cell" />
+    <rect x="545" y="100" class="grid-cell empty-cell" />
+    <rect x="545" y="115" class="grid-cell empty-cell" />
+    <rect x="545" y="130" class="grid-cell empty-cell" />
+    <rect x="545" y="145" class="grid-cell empty-cell" />
+    <rect x="560" y="55" class="grid-cell empty-cell" />
+    <rect x="560" y="70" class="grid-cell empty-cell" />
+    <rect x="560" y="85" class="grid-cell empty-cell" />
+    <rect x="560" y="100" class="grid-cell empty-cell" />
+    <rect x="560" y="115" class="grid-cell empty-cell" />
+    <rect x="560" y="130" class="grid-cell empty-cell" />
+    <rect x="560" y="145" class="grid-cell empty-cell" />
+    <rect x="575" y="55" class="grid-cell empty-cell" />
+    <rect x="575" y="70" class="grid-cell empty-cell" />
+    <rect x="575" y="85" class="grid-cell empty-cell" />
+    <rect x="575" y="100" class="grid-cell empty-cell" />
+    <rect x="575" y="115" class="grid-cell empty-cell" />
+    <rect x="575" y="130" class="grid-cell empty-cell" />
+    <rect x="575" y="145" class="grid-cell" fill="#006d32" />
+    <rect x="590" y="55" class="grid-cell empty-cell" />
+    <rect x="590" y="70" class="grid-cell empty-cell" />
+    <rect x="590" y="85" class="grid-cell empty-cell" />
+    <rect x="590" y="100" class="grid-cell empty-cell" />
+    <rect x="590" y="115" class="grid-cell empty-cell" />
+    <rect x="590" y="130" class="grid-cell empty-cell" />
+    <rect x="590" y="145" class="grid-cell empty-cell" />
+    <rect x="605" y="55" class="grid-cell empty-cell" />
+    <rect x="605" y="70" class="grid-cell" style="animation: eat_37_1 14s linear infinite; fill: #39d353;" />
+    <rect x="605" y="85" class="grid-cell empty-cell" />
+    <rect x="605" y="100" class="grid-cell empty-cell" />
+    <rect x="605" y="115" class="grid-cell empty-cell" />
+    <rect x="605" y="130" class="grid-cell empty-cell" />
+    <rect x="605" y="145" class="grid-cell empty-cell" />
+    <rect x="620" y="55" class="grid-cell empty-cell" />
+    <rect x="620" y="70" class="grid-cell empty-cell" />
+    <rect x="620" y="85" class="grid-cell empty-cell" />
+    <rect x="620" y="100" class="grid-cell empty-cell" />
+    <rect x="620" y="115" class="grid-cell empty-cell" />
+    <rect x="620" y="130" class="grid-cell empty-cell" />
+    <rect x="620" y="145" class="grid-cell empty-cell" />
+    <rect x="635" y="55" class="grid-cell empty-cell" />
+    <rect x="635" y="70" class="grid-cell empty-cell" />
+    <rect x="635" y="85" class="grid-cell empty-cell" />
+    <rect x="635" y="100" class="grid-cell empty-cell" />
+    <rect x="635" y="115" class="grid-cell empty-cell" />
+    <rect x="635" y="130" class="grid-cell empty-cell" />
+    <rect x="635" y="145" class="grid-cell empty-cell" />
+    <rect x="650" y="55" class="grid-cell empty-cell" />
+    <rect x="650" y="70" class="grid-cell empty-cell" />
+    <rect x="650" y="85" class="grid-cell empty-cell" />
+    <rect x="650" y="100" class="grid-cell empty-cell" />
+    <rect x="650" y="115" class="grid-cell empty-cell" />
+    <rect x="650" y="130" class="grid-cell empty-cell" />
+    <rect x="650" y="145" class="grid-cell empty-cell" />
+    <rect x="665" y="55" class="grid-cell empty-cell" />
+    <rect x="665" y="70" class="grid-cell" style="animation: eat_41_1 14s linear infinite; fill: #39d353;" />
+    <rect x="665" y="85" class="grid-cell empty-cell" />
+    <rect x="665" y="100" class="grid-cell empty-cell" />
+    <rect x="665" y="115" class="grid-cell" style="animation: eat_41_4 14s linear infinite; fill: #39d353;" />
+    <rect x="665" y="130" class="grid-cell empty-cell" />
+    <rect x="665" y="145" class="grid-cell empty-cell" />
+    <rect x="680" y="55" class="grid-cell" fill="#006d32" />
+    <rect x="680" y="70" class="grid-cell empty-cell" />
+    <rect x="680" y="85" class="grid-cell" fill="#26a641" />
+    <rect x="680" y="100" class="grid-cell empty-cell" />
+    <rect x="680" y="115" class="grid-cell empty-cell" />
+    <rect x="680" y="130" class="grid-cell" style="animation: eat_42_5 14s linear infinite; fill: #39d353;" />
+    <rect x="680" y="145" class="grid-cell" style="animation: eat_42_6 14s linear infinite; fill: #39d353;" />
+    <rect x="695" y="55" class="grid-cell" fill="#006d32" />
+    <rect x="695" y="70" class="grid-cell" style="animation: eat_43_1 14s linear infinite; fill: #39d353;" />
+    <rect x="695" y="85" class="grid-cell" fill="#26a641" />
+    <rect x="695" y="100" class="grid-cell" style="animation: eat_43_3 14s linear infinite; fill: #39d353;" />
+    <rect x="695" y="115" class="grid-cell empty-cell" />
+    <rect x="695" y="130" class="grid-cell empty-cell" />
+    <rect x="695" y="145" class="grid-cell" fill="#26a641" />
+    <rect x="710" y="55" class="grid-cell empty-cell" />
+    <rect x="710" y="70" class="grid-cell" fill="#006d32" />
+    <rect x="710" y="85" class="grid-cell empty-cell" />
+    <rect x="710" y="100" class="grid-cell" style="animation: eat_44_3 14s linear infinite; fill: #39d353;" />
+    <rect x="710" y="115" class="grid-cell" fill="#26a641" />
+    <rect x="710" y="130" class="grid-cell" style="animation: eat_44_5 14s linear infinite; fill: #39d353;" />
+    <rect x="710" y="145" class="grid-cell" style="animation: eat_44_6 14s linear infinite; fill: #39d353;" />
+    <rect x="725" y="55" class="grid-cell empty-cell" />
+    <rect x="725" y="70" class="grid-cell empty-cell" />
+    <rect x="725" y="85" class="grid-cell empty-cell" />
+    <rect x="725" y="100" class="grid-cell empty-cell" />
+    <rect x="725" y="115" class="grid-cell empty-cell" />
+    <rect x="725" y="130" class="grid-cell empty-cell" />
+    <rect x="725" y="145" class="grid-cell empty-cell" />
 
-    <!-- Nov / Dec -->
-    <rect x="60" y="0" class="grid-dot c0" /><rect x="60" y="14" class="grid-dot c0" /><rect x="60" y="28" class="grid-dot c0" /><rect x="60" y="42" class="grid-dot c0" /><rect x="60" y="56" class="grid-dot c0" /><rect x="60" y="70" class="grid-dot c0" /><rect x="60" y="84" class="grid-dot c0" />
-    <rect x="75" y="0" class="grid-dot c0" /><rect x="75" y="14" class="grid-dot c0" /><rect x="75" y="28" class="grid-dot c0" /><rect x="75" y="42" class="grid-dot c0" /><rect x="75" y="56" class="grid-dot c0" /><rect x="75" y="70" class="grid-dot c0" /><rect x="75" y="84" class="grid-dot c0" />
-    <rect x="90" y="0" class="grid-dot c0" /><rect x="90" y="14" class="grid-dot c0" /><rect x="90" y="28" class="grid-dot c0" /><rect x="90" y="42" class="grid-dot c0" /><rect x="90" y="56" class="grid-dot c0" /><rect x="90" y="70" class="grid-dot c0" /><rect x="90" y="84" class="grid-dot c0" />
-    <rect x="105" y="0" class="grid-dot c0" /><rect x="105" y="14" class="grid-dot c0" /><rect x="105" y="28" class="grid-dot c2" /><rect x="105" y="42" class="grid-dot c0" /><rect x="105" y="56" class="grid-dot c0" /><rect x="105" y="70" class="grid-dot c0" /><rect x="105" y="84" class="grid-dot c0" />
-    <rect x="120" y="0" class="grid-dot c0" /><rect x="120" y="14" class="grid-dot c0" /><rect x="120" y="28" class="grid-dot c3" /><rect x="120" y="42" class="grid-dot c0" /><rect x="120" y="56" class="grid-dot c0" /><rect x="120" y="70" class="grid-dot c0" /><rect x="120" y="84" class="grid-dot c0" />
-    <rect x="135" y="0" class="grid-dot c0" /><rect x="135" y="14" class="grid-dot c0" /><rect x="135" y="28" class="grid-dot c0" /><rect x="135" y="42" class="grid-dot c0" /><rect x="135" y="56" class="grid-dot c0" /><rect x="135" y="70" class="grid-dot c0" /><rect x="135" y="84" class="grid-dot c0" />
-
-    <!-- Jan / Feb -->
-    <rect x="150" y="0" class="grid-dot c0" /><rect x="150" y="14" class="grid-dot c0" /><rect x="150" y="28" class="grid-dot c0" /><rect x="150" y="42" class="grid-dot c0" /><rect x="150" y="56" class="grid-dot c0" /><rect x="150" y="70" class="grid-dot c0" /><rect x="150" y="84" class="grid-dot c0" />
-    <rect x="165" y="0" class="grid-dot c0" /><rect x="165" y="14" class="grid-dot c0" /><rect x="165" y="28" class="grid-dot c0" /><rect x="165" y="42" class="grid-dot c0" /><rect x="165" y="56" class="grid-dot c0" /><rect x="165" y="70" class="grid-dot c0" /><rect x="165" y="84" class="grid-dot c0" />
-    <rect x="180" y="0" class="grid-dot c0" /><rect x="180" y="14" class="grid-dot c0" /><rect x="180" y="28" class="grid-dot c0" /><rect x="180" y="42" class="grid-dot c0" /><rect x="180" y="56" class="grid-dot c0" /><rect x="180" y="70" class="grid-dot c0" /><rect x="180" y="84" class="grid-dot c0" />
-    <rect x="195" y="0" class="grid-dot c0" /><rect x="195" y="14" class="grid-dot c0" /><rect x="195" y="28" class="grid-dot c0" /><rect x="195" y="42" class="grid-dot c0" /><rect x="195" y="56" class="grid-dot c0" /><rect x="195" y="70" class="grid-dot c0" /><rect x="195" y="84" class="grid-dot c0" />
-    <rect x="210" y="0" class="grid-dot c0" /><rect x="210" y="14" class="grid-dot c3" /><rect x="210" y="28" class="grid-dot c0" /><rect x="210" y="42" class="grid-dot c2" /><rect x="210" y="56" class="grid-dot c0" /><rect x="210" y="70" class="grid-dot c0" /><rect x="210" y="84" class="grid-dot c0" />
-    <rect x="225" y="0" class="grid-dot c0" /><rect x="225" y="14" class="grid-dot c1" /><rect x="225" y="28" class="grid-dot c0" /><rect x="225" y="42" class="grid-dot c0" /><rect x="225" y="56" class="grid-dot c0" /><rect x="225" y="70" class="grid-dot c0" /><rect x="225" y="84" class="grid-dot c0" />
-    <rect x="240" y="0" class="grid-dot c0" /><rect x="240" y="14" class="grid-dot c2" /><rect x="240" y="28" class="grid-dot c0" /><rect x="240" y="42" class="grid-dot c0" /><rect x="240" y="56" class="grid-dot c0" /><rect x="240" y="70" class="grid-dot c0" /><rect x="240" y="84" class="grid-dot c0" />
-
-    <!-- Mar / Apr -->
-    <rect x="255" y="0" class="grid-dot c0" /><rect x="255" y="14" class="grid-dot c0" /><rect x="255" y="28" class="grid-dot c0" /><rect x="255" y="42" class="grid-dot c0" /><rect x="255" y="56" class="grid-dot c0" /><rect x="255" y="70" class="grid-dot c0" /><rect x="255" y="84" class="grid-dot c0" />
-    <rect x="270" y="0" class="grid-dot c3" /><rect x="270" y="14" class="grid-dot c0" /><rect x="270" y="28" class="grid-dot c1" /><rect x="270" y="42" class="grid-dot c3" /><rect x="270" y="56" class="grid-dot c0" /><rect x="270" y="70" class="grid-dot c0" /><rect x="270" y="84" class="grid-dot c0" />
-    <rect x="285" y="0" class="grid-dot c0" /><rect x="285" y="14" class="grid-dot c0" /><rect x="285" y="28" class="grid-dot c0" /><rect x="285" y="42" class="grid-dot c0" /><rect x="285" y="56" class="grid-dot c3" /><rect x="285" y="70" class="grid-dot c0" /><rect x="285" y="84" class="grid-dot c0" />
-    <rect x="300" y="0" class="grid-dot c0" /><rect x="300" y="14" class="grid-dot c3" /><rect x="300" y="28" class="grid-dot c0" /><rect x="300" y="42" class="grid-dot c0" /><rect x="300" y="56" class="grid-dot c0" /><rect x="300" y="70" class="grid-dot c2" /><rect x="300" y="84" class="grid-dot c0" />
-    <rect x="315" y="0" class="grid-dot c0" /><rect x="315" y="14" class="grid-dot c0" /><rect x="315" y="28" class="grid-dot c0" /><rect x="315" y="42" class="grid-dot c0" /><rect x="315" y="56" class="grid-dot c0" /><rect x="315" y="70" class="grid-dot c0" /><rect x="315" y="84" class="grid-dot c0" />
-    <rect x="330" y="0" class="grid-dot c0" /><rect x="330" y="14" class="grid-dot c1" /><rect x="330" y="28" class="grid-dot c0" /><rect x="330" y="42" class="grid-dot c0" /><rect x="330" y="56" class="grid-dot c0" /><rect x="330" y="70" class="grid-dot c3" /><rect x="330" y="84" class="grid-dot c1" />
-
-    <!-- May / Jun / Jul -->
-    <rect x="345" y="0" class="grid-dot c0" /><rect x="345" y="14" class="grid-dot c3" /><rect x="345" y="28" class="grid-dot c0" /><rect x="345" y="42" class="grid-dot c0" /><rect x="345" y="56" class="grid-dot c0" /><rect x="345" y="70" class="grid-dot c0" /><rect x="345" y="84" class="grid-dot c0" />
-    <rect x="360" y="0" class="grid-dot c0" /><rect x="360" y="14" class="grid-dot c0" /><rect x="360" y="28" class="grid-dot c0" /><rect x="360" y="42" class="grid-dot c0" /><rect x="360" y="56" class="grid-dot c0" /><rect x="360" y="70" class="grid-dot c0" /><rect x="360" y="84" class="grid-dot c0" />
-    <rect x="375" y="0" class="grid-dot c0" /><rect x="375" y="14" class="grid-dot c0" /><rect x="375" y="28" class="grid-dot c0" /><rect x="375" y="42" class="grid-dot c0" /><rect x="375" y="56" class="grid-dot c0" /><rect x="375" y="70" class="grid-dot c0" /><rect x="375" y="84" class="grid-dot c0" />
-    <rect x="390" y="0" class="grid-dot c0" /><rect x="390" y="14" class="grid-dot c0" /><rect x="390" y="28" class="grid-dot c0" /><rect x="390" y="42" class="grid-dot c0" /><rect x="390" y="56" class="grid-dot c0" /><rect x="390" y="70" class="grid-dot c0" /><rect x="390" y="84" class="grid-dot c0" />
-    <rect x="405" y="0" class="grid-dot c0" /><rect x="405" y="14" class="grid-dot c0" /><rect x="405" y="28" class="grid-dot c0" /><rect x="405" y="42" class="grid-dot c0" /><rect x="405" y="56" class="grid-dot c0" /><rect x="405" y="70" class="grid-dot c0" /><rect x="405" y="84" class="grid-dot c0" />
-    <rect x="420" y="0" class="grid-dot c0" /><rect x="420" y="14" class="grid-dot c0" /><rect x="420" y="28" class="grid-dot c0" /><rect x="420" y="42" class="grid-dot c0" /><rect x="420" y="56" class="grid-dot c0" /><rect x="420" y="70" class="grid-dot c0" /><rect x="420" y="84" class="grid-dot c0" />
-    <rect x="435" y="0" class="grid-dot c0" /><rect x="435" y="14" class="grid-dot c0" /><rect x="435" y="28" class="grid-dot c0" /><rect x="435" y="42" class="grid-dot c0" /><rect x="435" y="56" class="grid-dot c0" /><rect x="435" y="70" class="grid-dot c0" /><rect x="435" y="84" class="grid-dot c0" />
-    <rect x="450" y="0" class="grid-dot c0" /><rect x="450" y="14" class="grid-dot c0" /><rect x="450" y="28" class="grid-dot c0" /><rect x="450" y="42" class="grid-dot c0" /><rect x="450" y="56" class="grid-dot c0" /><rect x="450" y="70" class="grid-dot c0" /><rect x="450" y="84" class="grid-dot c0" />
-    <rect x="465" y="0" class="grid-dot c0" /><rect x="465" y="14" class="grid-dot c0" /><rect x="465" y="28" class="grid-dot c0" /><rect x="465" y="42" class="grid-dot c0" /><rect x="465" y="56" class="grid-dot c0" /><rect x="465" y="70" class="grid-dot c0" /><rect x="465" y="84" class="grid-dot c0" />
-    <rect x="480" y="0" class="grid-dot c0" /><rect x="480" y="14" class="grid-dot c0" /><rect x="480" y="28" class="grid-dot c0" /><rect x="480" y="42" class="grid-dot c0" /><rect x="480" y="56" class="grid-dot c0" /><rect x="480" y="70" class="grid-dot c0" /><rect x="480" y="84" class="grid-dot c0" />
-    <rect x="495" y="0" class="grid-dot c0" /><rect x="495" y="14" class="grid-dot c0" /><rect x="495" y="28" class="grid-dot c0" /><rect x="495" y="42" class="grid-dot c0" /><rect x="495" y="56" class="grid-dot c0" /><rect x="495" y="70" class="grid-dot c0" /><rect x="495" y="84" class="grid-dot c0" />
-    <rect x="510" y="0" class="grid-dot c0" /><rect x="510" y="14" class="grid-dot c0" /><rect x="510" y="28" class="grid-dot c0" /><rect x="510" y="42" class="grid-dot c0" /><rect x="510" y="56" class="grid-dot c0" /><rect x="510" y="70" class="grid-dot c0" /><rect x="510" y="84" class="grid-dot c0" />
-    <rect x="525" y="0" class="grid-dot c0" /><rect x="525" y="14" class="grid-dot c0" /><rect x="525" y="28" class="grid-dot c0" /><rect x="525" y="42" class="grid-dot c0" /><rect x="525" y="56" class="grid-dot c0" /><rect x="525" y="70" class="grid-dot c0" /><rect x="525" y="84" class="grid-dot c0" />
-    <rect x="540" y="0" class="grid-dot c0" /><rect x="540" y="14" class="grid-dot c0" /><rect x="540" y="28" class="grid-dot c0" /><rect x="540" y="42" class="grid-dot c0" /><rect x="540" y="56" class="grid-dot c0" /><rect x="540" y="70" class="grid-dot c0" /><rect x="540" y="84" class="grid-dot c0" />
-    <rect x="555" y="0" class="grid-dot c0" /><rect x="555" y="14" class="grid-dot c0" /><rect x="555" y="28" class="grid-dot c0" /><rect x="555" y="42" class="grid-dot c0" /><rect x="555" y="56" class="grid-dot c0" /><rect x="555" y="70" class="grid-dot c0" /><rect x="555" y="84" class="grid-dot c0" />
-    <rect x="570" y="0" class="grid-dot c0" /><rect x="570" y="14" class="grid-dot c0" /><rect x="570" y="28" class="grid-dot c0" /><rect x="570" y="42" class="grid-dot c0" /><rect x="570" y="56" class="grid-dot c0" /><rect x="570" y="70" class="grid-dot c0" /><rect x="570" y="84" class="grid-dot c0" />
-    <rect x="585" y="0" class="grid-dot c0" /><rect x="585" y="14" class="grid-dot c0" /><rect x="585" y="28" class="grid-dot c0" /><rect x="585" y="42" class="grid-dot c0" /><rect x="585" y="56" class="grid-dot c0" /><rect x="585" y="70" class="grid-dot c0" /><rect x="585" y="84" class="grid-dot c0" />
-    <rect x="600" y="0" class="grid-dot c0" /><rect x="600" y="14" class="grid-dot c0" /><rect x="600" y="28" class="grid-dot c0" /><rect x="600" y="42" class="grid-dot c0" /><rect x="600" y="56" class="grid-dot c0" /><rect x="600" y="70" class="grid-dot c0" /><rect x="600" y="84" class="grid-dot c0" />
-    <rect x="615" y="0" class="grid-dot c0" /><rect x="615" y="14" class="grid-dot c0" /><rect x="615" y="28" class="grid-dot c0" /><rect x="615" y="42" class="grid-dot c0" /><rect x="615" y="56" class="grid-dot c0" /><rect x="615" y="70" class="grid-dot c0" /><rect x="615" y="84" class="grid-dot c0" />
-    <rect x="630" y="0" class="grid-dot c0" /><rect x="630" y="14" class="grid-dot c0" /><rect x="630" y="28" class="grid-dot c0" /><rect x="630" y="42" class="grid-dot c0" /><rect x="630" y="56" class="grid-dot c0" /><rect x="630" y="70" class="grid-dot c0" /><rect x="630" y="84" class="grid-dot c0" />
-    <rect x="645" y="0" class="grid-dot c0" /><rect x="645" y="14" class="grid-dot c0" /><rect x="645" y="28" class="grid-dot c0" /><rect x="645" y="42" class="grid-dot c0" /><rect x="645" y="56" class="grid-dot c0" /><rect x="645" y="70" class="grid-dot c0" /><rect x="645" y="84" class="grid-dot c0" />
-    <rect x="660" y="0" class="grid-dot c0" /><rect x="660" y="14" class="grid-dot c0" /><rect x="660" y="28" class="grid-dot c0" /><rect x="660" y="42" class="grid-dot c0" /><rect x="660" y="56" class="grid-dot c0" /><rect x="660" y="70" class="grid-dot c0" /><rect x="660" y="84" class="grid-dot c0" />
-    <rect x="675" y="0" class="grid-dot c0" /><rect x="675" y="14" class="grid-dot c0" /><rect x="675" y="28" class="grid-dot c0" /><rect x="675" y="42" class="grid-dot c0" /><rect x="675" y="56" class="grid-dot c0" /><rect x="675" y="70" class="grid-dot c0" /><rect x="675" y="84" class="grid-dot c0" />
-    <rect x="690" y="0" class="grid-dot c0" /><rect x="690" y="14" class="grid-dot c0" /><rect x="690" y="28" class="grid-dot c0" /><rect x="690" y="42" class="grid-dot c0" /><rect x="690" y="56" class="grid-dot c0" /><rect x="690" y="70" class="grid-dot c2" /><rect x="690" y="84" class="grid-dot c0" />
-
-    <!-- September Peak Velocity (Matches screenshot high density!) -->
-    <rect x="705" y="0" class="grid-dot c3" /><rect x="705" y="14" class="grid-dot c4" /><rect x="705" y="28" class="grid-dot c4" /><rect x="705" y="42" class="grid-dot c0" /><rect x="705" y="56" class="grid-dot c3" /><rect x="705" y="70" class="grid-dot c4" /><rect x="705" y="84" class="grid-dot c4" />
-    <rect x="720" y="0" class="grid-dot c4" /><rect x="720" y="14" class="grid-dot c3" /><rect x="720" y="28" class="grid-dot c4" /><rect x="720" y="42" class="grid-dot c0" /><rect x="720" y="56" class="grid-dot c4" /><rect x="720" y="70" class="grid-dot c3" /><rect x="720" y="84" class="grid-dot c4" />
   </g>
 
-  <!-- Live Animated Snake Elements Slithering across the Grid -->
-  <rect class="snake-b2" x="0" y="0" />
-  <rect class="snake-b1" x="0" y="0" />
-  <rect class="snake-head" x="0" y="0" />
+  <!-- Active Snake Eating Commits -->
+  <rect class="snake-seg snake-s4" x="0" y="0" />
+  <rect class="snake-seg snake-s3" x="0" y="0" />
+  <rect class="snake-seg snake-s2" x="0" y="0" />
+  <rect class="snake-seg snake-s1" x="0" y="0" />
+  <rect class="snake-seg snake-h"  x="0" y="0" />
 
-  <!-- Bottom Legend -->
-  <g transform="translate(680, 162)">
-    <text x="-40" y="9" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Less</text>
-    <rect x="-14" y="0" width="10" height="10" rx="2" fill="#161b22" />
-    <rect x="0" y="0" width="10" height="10" rx="2" fill="#0e4429" />
-    <rect x="14" y="0" width="10" height="10" rx="2" fill="#006d32" />
-    <rect x="28" y="0" width="10" height="10" rx="2" fill="#26a641" />
-    <rect x="42" y="0" width="10" height="10" rx="2" fill="#39d353" />
-    <text x="58" y="9" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">More</text>
+  <!-- Legend -->
+  <g transform="translate(670, 168)">
+    <text x="-30" y="8" font-family="sans-serif" font-size="8.5" fill="#64748b">Less</text>
+    <rect x="-6" y="0" width="9" height="9" rx="2" fill="#161b22" />
+    <rect x="6" y="0" width="9" height="9" rx="2" fill="#0e4429" />
+    <rect x="18" y="0" width="9" height="9" rx="2" fill="#006d32" />
+    <rect x="30" y="0" width="9" height="9" rx="2" fill="#26a641" />
+    <rect x="42" y="0" width="9" height="9" rx="2" fill="#39d353" />
+    <text x="56" y="8" font-family="sans-serif" font-size="8.5" fill="#64748b">More</text>
   </g>
 </svg>
