@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- Hero Banner -->
+<!-- Animated Vector Hero Banner -->
 <img src="./assets/banner.svg" alt="Mohammad Asim - Banner" width="100%" />
 
 <br/>
@@ -32,18 +32,23 @@
 
 ---
 
-### 👨‍💻 About Me
+### About Me
 
-I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technology in Computer Science & Engineering at **Lovely Professional University** (CGPA: 7.98), with a solid engineering foundation having graduated with a Diploma in ECE from **Jamia Millia Islamia** (Ranked 16th among 10,000+ candidates).
+I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technology in Computer Science & Engineering at **Lovely Professional University** (CGPA: 7.98), with an engineering foundation having graduated with a Diploma in ECE from **Jamia Millia Islamia** (Ranked 16th among 10,000+ candidates).
 
-- ⚡ **Backend Mastery**: Specializing in **Java 21**, **Spring Boot 3.4**, **Spring Security**, and microservice architectures with robust RESTful APIs, JWT/OAuth2 authentication, and WebSocket real-time communication.
-- 🤖 **Agentic AI & Full-Stack**: Experienced in building autonomous multi-agent AI ecosystems using **Next.js**, **TypeScript**, and **Google Gemini API**.
-- 🏆 **Proven Competitor**: Winner of the **GeekVerse Hackathon** and Top 10 Finalist in **HACK AI Season 2** (24-hour national hackathon by LPU & byteXL).
-- 🎯 **Algorithmic Problem Solver**: In-depth experience with Data Structures, Graph Algorithms (BFS, DFS, Dijkstra's), and optimization on **LeetCode**.
+- **Backend Architecture & Engineering**: Specializing in **Java 21**, **Spring Boot 3.4**, **Spring Security**, and microservice architectures with high-throughput RESTful APIs, JWT/OAuth2 authentication, and WebSocket real-time communication.
+- **Agentic AI & Full-Stack Systems**: Experienced in building autonomous multi-agent AI ecosystems using **Next.js**, **TypeScript**, and **Google Gemini API**.
+- **Competitive Hackathons**: Winner of the **GeekVerse Hackathon** and Top 10 Finalist in **HACK AI Season 2** (24-hour national hackathon by LPU & byteXL).
+- **Algorithms & Problem Solving**: In-depth experience with Data Structures, Graph Algorithms (BFS, DFS, Dijkstra's), and optimization on **LeetCode**.
+
+<br/>
+
+<!-- Animated Skills Proficiency Telemetry -->
+<img src="./assets/skills-bar.svg" alt="Core Competencies" width="100%" />
 
 ---
 
-### 🛠️ Tech Stack & Skills Matrix
+### Technical Skills
 
 <table>
   <tr>
@@ -101,13 +106,13 @@ I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technol
 
 ---
 
-### 🚀 Featured Engineering Projects
+### Featured Projects
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>⚡ <a href="https://github.com/mohammadasim07/StormAPI">StormAPI — Performance Testing Platform</a></h3>
-      <p><b>Full-stack HTTP API Performance, Load & Stress Engineering Platform</b></p>
+      <h3><a href="https://github.com/mohammadasim07/StormAPI">StormAPI — Performance Testing Platform</a></h3>
+      <p><b>Full-stack HTTP API Performance, Load &amp; Stress Engineering Platform</b></p>
       <ul>
         <li>Architected using <b>Java 21</b> and <b>Spring Boot 3.4</b> with enterprise <b>Spring Security &amp; JWT</b>.</li>
         <li>Supports 6 rigorous testing profiles: <i>Load, Stress, Spike, Soak, Breakpoint &amp; Scalability</i>.</li>
@@ -122,7 +127,7 @@ I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technol
       <a href="https://github.com/mohammadasim07/StormAPI"><b>Explore Repository ➔</b></a>
     </td>
     <td width="50%" valign="top">
-      <h3>🤖 <a href="https://github.com/mohammadasim07/career-coach">CareerAI — Agentic Career Mentor</a></h3>
+      <h3><a href="https://github.com/mohammadasim07/career-coach">CareerAI — Agentic Career Mentor</a></h3>
       <p><b>Multi-Agent Autonomous AI Mentorship &amp; Placement Readiness Ecosystem</b></p>
       <ul>
         <li>Orchestrates <b>7 specialized AI agents</b> (Resume scoring, adaptive mock interviews, dynamic roadmaps, task planner &amp; job matching).</li>
@@ -139,7 +144,7 @@ I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technol
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🛡️ <a href="https://github.com/mohammadasim07/student-crud-spring-boot">Student Management REST API</a></h3>
+      <h3><a href="https://github.com/mohammadasim07/student-crud-spring-boot">Student Management REST API</a></h3>
       <p><b>Production-Grade CRUD Microservice with Spring Boot &amp; JPA</b></p>
       <ul>
         <li>Engineered clean layered architecture with DTOs, Bean Validation, and centralized Global Exception Handling.</li>
@@ -154,7 +159,7 @@ I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technol
       <a href="https://github.com/mohammadasim07/student-crud-spring-boot"><b>Explore Repository ➔</b></a>
     </td>
     <td width="50%" valign="top">
-      <h3>🧠 <a href="https://github.com/mohammadasim07/DSA">Data Structures &amp; Algorithms</a></h3>
+      <h3><a href="https://github.com/mohammadasim07/DSA">Data Structures &amp; Algorithms</a></h3>
       <p><b>Algorithmic Implementations &amp; Competitive Programming Solutions</b></p>
       <ul>
         <li>Curated solutions for LeetCode problem sets spanning arrays, dynamic programming, trees, and graphs.</li>
@@ -173,16 +178,16 @@ I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technol
 
 ---
 
-### 🏆 Hackathons & Key Achievements
+### Honors & Key Achievements
 
-- 🥇 **Winner — GeekVerse Hackathon (May 2026)**: Awarded 1st place for architectural innovation, rapid prototyping, and software engineering.
-- 🥈 **Top 10 Finalist — HACK AI Season 2 (May 2026)**: Selected among the top 10 teams in a high-intensity 24-hour national hackathon hosted by Lovely Professional University in partnership with **byteXL**.
-- 🎖️ **Adobe University Hackathon Participant (Aug 2026)**: Organized by Adobe on Unstop.
-- 🎯 **All-India Rank 16**: Achieved rank 16 out of 10,000+ aspirants in the competitive entrance examination for Jamia Millia Islamia.
+- **Winner — GeekVerse Hackathon** (May 2026): Awarded 1st place for architectural innovation, rapid prototyping, and software engineering.
+- **Top 10 Finalist — HACK AI Season 2** (May 2026): Selected among the top 10 teams in a high-intensity 24-hour national hackathon hosted by Lovely Professional University in partnership with **byteXL**.
+- **Adobe University Hackathon** (Aug 2026): Organized by Adobe on Unstop.
+- **All-India Rank 16**: Achieved rank 16 out of 10,000+ aspirants in the competitive entrance examination for Jamia Millia Islamia.
 
 ---
 
-### 📜 Certifications & Continuous Learning
+### Certifications & Training
 
 - **Programming in Java** — *NEO / iamNEO* (Jan 2026 – May 2026)
 - **Data Structures and Algorithms** — *NEO / iamNEO* (Jul 2025 – Jan 2026)
@@ -192,7 +197,7 @@ I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technol
 
 ---
 
-### 🎓 Education
+### Education
 
 - **Lovely Professional University**, Phagwara, Punjab
   - *Bachelor of Technology in Computer Science and Engineering* | **CGPA: 7.98** *(Aug 2025 – Present)*
@@ -203,9 +208,9 @@ I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technol
 
 <div align="center">
 
-### 🤝 Let's Connect & Collaborate!
+### Connect & Collaborate
 
-I am always open to discussing new opportunities, full-stack/backend engineering roles, innovative hackathon ideas, or tech collaborations.
+I am open to discussing backend engineering roles, innovative hackathon projects, and software collaborations.
 
 <p align="center">
   <a href="https://www.linkedin.com/in/mohammadasim07" target="_blank">

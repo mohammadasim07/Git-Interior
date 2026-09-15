@@ -1,0 +1,54 @@
+<svg fill="none" viewBox="0 0 800 130" width="100%" height="130" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bar-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="bar-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="130" rx="10" fill="#090d16" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Metric 1: Java 21 & Spring Boot 3.4 -->
+  <g transform="translate(30, 24)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#cbd5e1">Java 21 / Spring Boot 3.4</text>
+    <text x="340" y="0" font-family="Consolas, monospace" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="end">95%</text>
+    <rect x="0" y="8" width="340" height="6" rx="3" fill="url(#bar-bg)" />
+    <rect x="0" y="8" width="323" height="6" rx="3" fill="url(#bar-grad)">
+      <animate attributeName="width" from="0" to="323" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+    </rect>
+  </g>
+
+  <!-- Metric 2: REST APIs & Microservices -->
+  <g transform="translate(430, 24)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#cbd5e1">REST APIs &amp; Microservices</text>
+    <text x="340" y="0" font-family="Consolas, monospace" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="end">92%</text>
+    <rect x="0" y="8" width="340" height="6" rx="3" fill="url(#bar-bg)" />
+    <rect x="0" y="8" width="312" height="6" rx="3" fill="url(#bar-grad)">
+      <animate attributeName="width" from="0" to="312" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+    </rect>
+  </g>
+
+  <!-- Metric 3: Data Structures & Algorithms -->
+  <g transform="translate(30, 78)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#cbd5e1">Data Structures &amp; Algorithms</text>
+    <text x="340" y="0" font-family="Consolas, monospace" font-size="11" font-weight="700" fill="#818cf8" text-anchor="end">90%</text>
+    <rect x="0" y="8" width="340" height="6" rx="3" fill="url(#bar-bg)" />
+    <rect x="0" y="8" width="306" height="6" rx="3" fill="url(#bar-grad)">
+      <animate attributeName="width" from="0" to="306" dur="1.4s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+    </rect>
+  </g>
+
+  <!-- Metric 4: Next.js & Agentic AI -->
+  <g transform="translate(430, 78)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#cbd5e1">Next.js &amp; Agentic AI</text>
+    <text x="340" y="0" font-family="Consolas, monospace" font-size="11" font-weight="700" fill="#818cf8" text-anchor="end">88%</text>
+    <rect x="0" y="8" width="340" height="6" rx="3" fill="url(#bar-bg)" />
+    <rect x="0" y="8" width="299" height="6" rx="3" fill="url(#bar-grad)">
+      <animate attributeName="width" from="0" to="299" dur="1.4s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+    </rect>
+  </g>
+</svg>

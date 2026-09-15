@@ -1,66 +1,113 @@
-<svg fill="none" viewBox="0 0 800 210" width="100%" height="210" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 800 215" width="100%" height="215" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Background Gradient -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0f19" />
-      <stop offset="50%" stop-color="#111827" />
-      <stop offset="100%" stop-color="#1e1b4b" />
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#171536" />
     </linearGradient>
-    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="50%" stop-color="#818cf8" />
-      <stop offset="100%" stop-color="#c084fc" />
+
+    <!-- Animated Border Gradient -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8;#818cf8;#c084fc;#38bdf8" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#6366f1">
+        <animate attributeName="stop-color" values="#6366f1;#38bdf8;#818cf8;#6366f1" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#1e293b" />
     </linearGradient>
-    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="100%" stop-color="#6366f1" />
+
+    <!-- Animated Name Shimmer Gradient -->
+    <linearGradient id="name-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8;#818cf8;#38bdf8" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#a78bfa">
+        <animate attributeName="stop-color" values="#a78bfa;#38bdf8;#a78bfa" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8;#c084fc;#38bdf8" dur="5s" repeatCount="indefinite" />
+      </stop>
     </linearGradient>
-    <radialGradient id="glow" cx="80%" cy="20%" r="50%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#0b0f19" stop-opacity="0" />
+
+    <!-- Animated Ambient Glow -->
+    <radialGradient id="glow-grad" cx="85%" cy="25%" r="65%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3">
+        <animate attributeName="stop-opacity" values="0.32;0.12;0.32" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="60%" stop-color="#6366f1" stop-opacity="0.08">
+        <animate attributeName="stop-opacity" values="0.12;0.03;0.12" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#090d16" stop-opacity="0" />
     </radialGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.6" />
+    </pattern>
   </defs>
 
-  <!-- Background container -->
-  <rect width="800" height="210" rx="16" fill="url(#bg-grad)" stroke="#374151" stroke-width="1.2" />
-  <circle cx="680" cy="50" r="140" fill="url(#glow)" />
+  <!-- Container Box -->
+  <rect width="800" height="215" rx="14" fill="url(#bg-grad)" stroke="url(#border-grad)" stroke-width="1.2" />
 
-  <!-- Accent top bar -->
-  <rect x="0" y="0" width="800" height="4" rx="2" fill="url(#accent-grad)" />
+  <!-- Subtle Geometric Background Grid -->
+  <rect width="800" height="215" rx="14" fill="url(#grid)" opacity="0.45" />
 
-  <!-- Badge Pill -->
-  <rect x="40" y="28" width="280" height="26" rx="13" fill="#1e293b" stroke="#38bdf8" stroke-width="0.8" stroke-opacity="0.6" />
-  <text x="52" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" fill="#38bdf8" letter-spacing="0.4">
-    🚀 FULL-STACK &amp; BACKEND ENGINEER
-  </text>
+  <!-- Ambient Glow Orb -->
+  <circle cx="680" cy="65" r="160" fill="url(#glow-grad)" />
 
-  <!-- Greeting Title -->
-  <text x="40" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#ffffff">
-    Hi, I'm <tspan fill="url(#text-grad)">Mohammad Asim</tspan> 👋
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="800" height="3.5" rx="2" fill="url(#border-grad)" />
+
+  <!-- Status Pill with Pulsing Signal Animation -->
+  <g transform="translate(42, 28)">
+    <rect width="210" height="26" rx="13" fill="#0f172a" stroke="#334155" stroke-width="1" />
+    <!-- Pulse Ring Animation -->
+    <circle cx="16" cy="13" r="4" fill="#10b981">
+      <animate attributeName="r" values="3.5;4.5;3.5" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="16" cy="13" r="7" fill="none" stroke="#10b981" stroke-width="1.2">
+      <animate attributeName="r" values="4;9;4" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="stroke-opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="32" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#94a3b8" letter-spacing="0.6">
+      OPEN TO OPPORTUNITIES
+    </text>
+  </g>
+
+  <!-- Main Headline -->
+  <text x="42" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="800" fill="#f8fafc">
+    Mohammad Asim <tspan fill="url(#name-grad)">— Software Engineer</tspan>
   </text>
 
   <!-- Subtitle -->
-  <text x="40" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="400" fill="#94a3b8">
-    Crafting resilient distributed systems, Spring Boot 3.4 microservices &amp; Agentic AI workflows
+  <text x="42" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="400" fill="#94a3b8" letter-spacing="0.2">
+    Building high-performance backend microservices with Java 21, Spring Boot 3.4 &amp; Agentic AI workflows
   </text>
 
-  <!-- Highlights Pills -->
-  <g transform="translate(40, 148)">
-    <rect width="180" height="30" rx="7" fill="#111827" stroke="#374151" stroke-width="1" />
-    <text x="14" y="19" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="600" fill="#38bdf8">⚡ Java 21 / Spring 3.4</text>
+  <!-- Highlights Pills with Clean Dot Accents -->
+  <g transform="translate(42, 148)">
+    <rect width="175" height="32" rx="6" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+    <circle cx="15" cy="16" r="3" fill="#38bdf8" />
+    <text x="26" y="20" font-family="Consolas, 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#e2e8f0">Java 21 / Spring 3.4</text>
   </g>
 
-  <g transform="translate(230, 148)">
-    <rect width="170" height="30" rx="7" fill="#111827" stroke="#374151" stroke-width="1" />
-    <text x="14" y="19" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="600" fill="#a78bfa">🤖 Agentic AI &amp; Next.js</text>
+  <g transform="translate(227, 148)">
+    <rect width="170" height="32" rx="6" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+    <circle cx="15" cy="16" r="3" fill="#a78bfa" />
+    <text x="26" y="20" font-family="Consolas, 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#e2e8f0">Agentic AI &amp; Next.js</text>
   </g>
 
-  <g transform="translate(410, 148)">
-    <rect width="165" height="30" rx="7" fill="#111827" stroke="#374151" stroke-width="1" />
-    <text x="14" y="19" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="600" fill="#fbbf24">🏆 Hackathon Winner</text>
+  <g transform="translate(407, 148)">
+    <rect width="165" height="32" rx="6" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+    <circle cx="15" cy="16" r="3" fill="#f59e0b" />
+    <text x="26" y="20" font-family="Consolas, 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#e2e8f0">GeekVerse Winner</text>
   </g>
 
-  <g transform="translate(585, 148)">
-    <rect width="170" height="30" rx="7" fill="#111827" stroke="#374151" stroke-width="1" />
-    <text x="14" y="19" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="600" fill="#34d399">🎓 LPU B.Tech CSE</text>
+  <g transform="translate(582, 148)">
+    <rect width="175" height="32" rx="6" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+    <circle cx="15" cy="16" r="3" fill="#34d399" />
+    <text x="26" y="20" font-family="Consolas, 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#e2e8f0">LPU B.Tech CSE</text>
   </g>
 </svg>
