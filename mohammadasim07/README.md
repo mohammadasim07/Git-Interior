@@ -206,6 +206,12 @@ I am a **Software Engineer & Backend Specialist** pursuing a Bachelor of Technol
 
 ---
 
+### Contribution Velocity & Activity
+
+<img src="./assets/contribution-snake.svg" alt="Contribution Graph Snake Animation" width="100%" />
+
+---
+
 <div align="center">
 
 ### Connect & Collaborate

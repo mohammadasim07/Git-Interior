@@ -1,0 +1,177 @@
+<svg fill="none" viewBox="0 0 820 180" width="100%" height="180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0b0f19; stroke: #1e293b; stroke-width: 1; rx: 12; }
+      .header-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #94a3b8; }
+      .stat-text { font-family: Consolas, 'Courier New', monospace; font-size: 11.5px; font-weight: 600; fill: #38bdf8; }
+      .grid-dot { rx: 2.5; width: 10px; height: 10px; }
+      .c0 { fill: #161b22; }
+      .c1 { fill: #0e4429; }
+      .c2 { fill: #006d32; }
+      .c3 { fill: #26a641; }
+      .c4 { fill: #39d353; }
+      
+      /* Animated Snake Movement */
+      @keyframes moveSnakeHead {
+        0%   { transform: translate(120px, 60px); }
+        20%  { transform: translate(320px, 60px); }
+        35%  { transform: translate(320px, 100px); }
+        55%  { transform: translate(560px, 100px); }
+        70%  { transform: translate(560px, 130px); }
+        85%  { transform: translate(750px, 130px); }
+        92%  { transform: translate(750px, 60px); }
+        100% { transform: translate(120px, 60px); }
+      }
+      @keyframes moveSnakeBody1 {
+        0%   { transform: translate(105px, 60px); }
+        20%  { transform: translate(305px, 60px); }
+        35%  { transform: translate(320px, 85px); }
+        55%  { transform: translate(545px, 100px); }
+        70%  { transform: translate(560px, 115px); }
+        85%  { transform: translate(735px, 130px); }
+        92%  { transform: translate(750px, 75px); }
+        100% { transform: translate(105px, 60px); }
+      }
+      @keyframes moveSnakeBody2 {
+        0%   { transform: translate(90px, 60px); }
+        20%  { transform: translate(290px, 60px); }
+        35%  { transform: translate(320px, 70px); }
+        55%  { transform: translate(530px, 100px); }
+        70%  { transform: translate(560px, 100px); }
+        85%  { transform: translate(720px, 130px); }
+        92%  { transform: translate(750px, 90px); }
+        100% { transform: translate(90px, 60px); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 4px #38bdf8); }
+        50% { opacity: 1; filter: drop-shadow(0 0 8px #39d353); }
+      }
+      .snake-head {
+        fill: #38bdf8;
+        animation: moveSnakeHead 12s cubic-bezier(0.4, 0, 0.2, 1) infinite, pulseGlow 2s infinite;
+        rx: 3.5;
+        width: 12px;
+        height: 12px;
+      }
+      .snake-b1 {
+        fill: #34d399;
+        animation: moveSnakeBody1 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        rx: 3;
+        width: 11px;
+        height: 11px;
+      }
+      .snake-b2 {
+        fill: #10b981;
+        animation: moveSnakeBody2 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        rx: 2.5;
+        width: 10px;
+        height: 10px;
+      }
+    </style>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="820" height="180" class="bg" />
+
+  <!-- Top Header Info -->
+  <g transform="translate(30, 28)">
+    <text x="0" y="0" class="header-text">CONTRIBUTION ACTIVITY &amp; COMMIT VELOCITY</text>
+    <text x="760" y="0" class="stat-text" text-anchor="end">133+ Commits · Active Streak 🚀</text>
+  </g>
+
+  <!-- Month Labels -->
+  <g transform="translate(48, 48)" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5">
+    <text x="0">Oct</text>
+    <text x="65">Nov</text>
+    <text x="130">Dec</text>
+    <text x="195">Jan</text>
+    <text x="260">Feb</text>
+    <text x="325">Mar</text>
+    <text x="390">Apr</text>
+    <text x="455">May</text>
+    <text x="520">Jun</text>
+    <text x="585">Jul</text>
+    <text x="650">Aug</text>
+    <text x="715">Sep</text>
+  </g>
+
+  <!-- Contribution Grid Container (7 rows x 50 columns) -->
+  <g id="grid" transform="translate(48, 56)">
+    <!-- Week 1 - 4 (Oct) -->
+    <rect x="0" y="0" class="grid-dot c0" /><rect x="0" y="14" class="grid-dot c0" /><rect x="0" y="28" class="grid-dot c0" /><rect x="0" y="42" class="grid-dot c0" /><rect x="0" y="56" class="grid-dot c0" /><rect x="0" y="70" class="grid-dot c0" /><rect x="0" y="84" class="grid-dot c0" />
+    <rect x="15" y="0" class="grid-dot c0" /><rect x="15" y="14" class="grid-dot c0" /><rect x="15" y="28" class="grid-dot c0" /><rect x="15" y="42" class="grid-dot c0" /><rect x="15" y="56" class="grid-dot c0" /><rect x="15" y="70" class="grid-dot c0" /><rect x="15" y="84" class="grid-dot c0" />
+    <rect x="30" y="0" class="grid-dot c0" /><rect x="30" y="14" class="grid-dot c3" /><rect x="30" y="28" class="grid-dot c0" /><rect x="30" y="42" class="grid-dot c4" /><rect x="30" y="56" class="grid-dot c0" /><rect x="30" y="70" class="grid-dot c0" /><rect x="30" y="84" class="grid-dot c0" />
+    <rect x="45" y="0" class="grid-dot c0" /><rect x="45" y="14" class="grid-dot c2" /><rect x="45" y="28" class="grid-dot c0" /><rect x="45" y="42" class="grid-dot c0" /><rect x="45" y="56" class="grid-dot c0" /><rect x="45" y="70" class="grid-dot c0" /><rect x="45" y="84" class="grid-dot c0" />
+
+    <!-- Nov / Dec -->
+    <rect x="60" y="0" class="grid-dot c0" /><rect x="60" y="14" class="grid-dot c0" /><rect x="60" y="28" class="grid-dot c0" /><rect x="60" y="42" class="grid-dot c0" /><rect x="60" y="56" class="grid-dot c0" /><rect x="60" y="70" class="grid-dot c0" /><rect x="60" y="84" class="grid-dot c0" />
+    <rect x="75" y="0" class="grid-dot c0" /><rect x="75" y="14" class="grid-dot c0" /><rect x="75" y="28" class="grid-dot c0" /><rect x="75" y="42" class="grid-dot c0" /><rect x="75" y="56" class="grid-dot c0" /><rect x="75" y="70" class="grid-dot c0" /><rect x="75" y="84" class="grid-dot c0" />
+    <rect x="90" y="0" class="grid-dot c0" /><rect x="90" y="14" class="grid-dot c0" /><rect x="90" y="28" class="grid-dot c0" /><rect x="90" y="42" class="grid-dot c0" /><rect x="90" y="56" class="grid-dot c0" /><rect x="90" y="70" class="grid-dot c0" /><rect x="90" y="84" class="grid-dot c0" />
+    <rect x="105" y="0" class="grid-dot c0" /><rect x="105" y="14" class="grid-dot c0" /><rect x="105" y="28" class="grid-dot c2" /><rect x="105" y="42" class="grid-dot c0" /><rect x="105" y="56" class="grid-dot c0" /><rect x="105" y="70" class="grid-dot c0" /><rect x="105" y="84" class="grid-dot c0" />
+    <rect x="120" y="0" class="grid-dot c0" /><rect x="120" y="14" class="grid-dot c0" /><rect x="120" y="28" class="grid-dot c3" /><rect x="120" y="42" class="grid-dot c0" /><rect x="120" y="56" class="grid-dot c0" /><rect x="120" y="70" class="grid-dot c0" /><rect x="120" y="84" class="grid-dot c0" />
+    <rect x="135" y="0" class="grid-dot c0" /><rect x="135" y="14" class="grid-dot c0" /><rect x="135" y="28" class="grid-dot c0" /><rect x="135" y="42" class="grid-dot c0" /><rect x="135" y="56" class="grid-dot c0" /><rect x="135" y="70" class="grid-dot c0" /><rect x="135" y="84" class="grid-dot c0" />
+
+    <!-- Jan / Feb -->
+    <rect x="150" y="0" class="grid-dot c0" /><rect x="150" y="14" class="grid-dot c0" /><rect x="150" y="28" class="grid-dot c0" /><rect x="150" y="42" class="grid-dot c0" /><rect x="150" y="56" class="grid-dot c0" /><rect x="150" y="70" class="grid-dot c0" /><rect x="150" y="84" class="grid-dot c0" />
+    <rect x="165" y="0" class="grid-dot c0" /><rect x="165" y="14" class="grid-dot c0" /><rect x="165" y="28" class="grid-dot c0" /><rect x="165" y="42" class="grid-dot c0" /><rect x="165" y="56" class="grid-dot c0" /><rect x="165" y="70" class="grid-dot c0" /><rect x="165" y="84" class="grid-dot c0" />
+    <rect x="180" y="0" class="grid-dot c0" /><rect x="180" y="14" class="grid-dot c0" /><rect x="180" y="28" class="grid-dot c0" /><rect x="180" y="42" class="grid-dot c0" /><rect x="180" y="56" class="grid-dot c0" /><rect x="180" y="70" class="grid-dot c0" /><rect x="180" y="84" class="grid-dot c0" />
+    <rect x="195" y="0" class="grid-dot c0" /><rect x="195" y="14" class="grid-dot c0" /><rect x="195" y="28" class="grid-dot c0" /><rect x="195" y="42" class="grid-dot c0" /><rect x="195" y="56" class="grid-dot c0" /><rect x="195" y="70" class="grid-dot c0" /><rect x="195" y="84" class="grid-dot c0" />
+    <rect x="210" y="0" class="grid-dot c0" /><rect x="210" y="14" class="grid-dot c3" /><rect x="210" y="28" class="grid-dot c0" /><rect x="210" y="42" class="grid-dot c2" /><rect x="210" y="56" class="grid-dot c0" /><rect x="210" y="70" class="grid-dot c0" /><rect x="210" y="84" class="grid-dot c0" />
+    <rect x="225" y="0" class="grid-dot c0" /><rect x="225" y="14" class="grid-dot c1" /><rect x="225" y="28" class="grid-dot c0" /><rect x="225" y="42" class="grid-dot c0" /><rect x="225" y="56" class="grid-dot c0" /><rect x="225" y="70" class="grid-dot c0" /><rect x="225" y="84" class="grid-dot c0" />
+    <rect x="240" y="0" class="grid-dot c0" /><rect x="240" y="14" class="grid-dot c2" /><rect x="240" y="28" class="grid-dot c0" /><rect x="240" y="42" class="grid-dot c0" /><rect x="240" y="56" class="grid-dot c0" /><rect x="240" y="70" class="grid-dot c0" /><rect x="240" y="84" class="grid-dot c0" />
+
+    <!-- Mar / Apr -->
+    <rect x="255" y="0" class="grid-dot c0" /><rect x="255" y="14" class="grid-dot c0" /><rect x="255" y="28" class="grid-dot c0" /><rect x="255" y="42" class="grid-dot c0" /><rect x="255" y="56" class="grid-dot c0" /><rect x="255" y="70" class="grid-dot c0" /><rect x="255" y="84" class="grid-dot c0" />
+    <rect x="270" y="0" class="grid-dot c3" /><rect x="270" y="14" class="grid-dot c0" /><rect x="270" y="28" class="grid-dot c1" /><rect x="270" y="42" class="grid-dot c3" /><rect x="270" y="56" class="grid-dot c0" /><rect x="270" y="70" class="grid-dot c0" /><rect x="270" y="84" class="grid-dot c0" />
+    <rect x="285" y="0" class="grid-dot c0" /><rect x="285" y="14" class="grid-dot c0" /><rect x="285" y="28" class="grid-dot c0" /><rect x="285" y="42" class="grid-dot c0" /><rect x="285" y="56" class="grid-dot c3" /><rect x="285" y="70" class="grid-dot c0" /><rect x="285" y="84" class="grid-dot c0" />
+    <rect x="300" y="0" class="grid-dot c0" /><rect x="300" y="14" class="grid-dot c3" /><rect x="300" y="28" class="grid-dot c0" /><rect x="300" y="42" class="grid-dot c0" /><rect x="300" y="56" class="grid-dot c0" /><rect x="300" y="70" class="grid-dot c2" /><rect x="300" y="84" class="grid-dot c0" />
+    <rect x="315" y="0" class="grid-dot c0" /><rect x="315" y="14" class="grid-dot c0" /><rect x="315" y="28" class="grid-dot c0" /><rect x="315" y="42" class="grid-dot c0" /><rect x="315" y="56" class="grid-dot c0" /><rect x="315" y="70" class="grid-dot c0" /><rect x="315" y="84" class="grid-dot c0" />
+    <rect x="330" y="0" class="grid-dot c0" /><rect x="330" y="14" class="grid-dot c1" /><rect x="330" y="28" class="grid-dot c0" /><rect x="330" y="42" class="grid-dot c0" /><rect x="330" y="56" class="grid-dot c0" /><rect x="330" y="70" class="grid-dot c3" /><rect x="330" y="84" class="grid-dot c1" />
+
+    <!-- May / Jun / Jul -->
+    <rect x="345" y="0" class="grid-dot c0" /><rect x="345" y="14" class="grid-dot c3" /><rect x="345" y="28" class="grid-dot c0" /><rect x="345" y="42" class="grid-dot c0" /><rect x="345" y="56" class="grid-dot c0" /><rect x="345" y="70" class="grid-dot c0" /><rect x="345" y="84" class="grid-dot c0" />
+    <rect x="360" y="0" class="grid-dot c0" /><rect x="360" y="14" class="grid-dot c0" /><rect x="360" y="28" class="grid-dot c0" /><rect x="360" y="42" class="grid-dot c0" /><rect x="360" y="56" class="grid-dot c0" /><rect x="360" y="70" class="grid-dot c0" /><rect x="360" y="84" class="grid-dot c0" />
+    <rect x="375" y="0" class="grid-dot c0" /><rect x="375" y="14" class="grid-dot c0" /><rect x="375" y="28" class="grid-dot c0" /><rect x="375" y="42" class="grid-dot c0" /><rect x="375" y="56" class="grid-dot c0" /><rect x="375" y="70" class="grid-dot c0" /><rect x="375" y="84" class="grid-dot c0" />
+    <rect x="390" y="0" class="grid-dot c0" /><rect x="390" y="14" class="grid-dot c0" /><rect x="390" y="28" class="grid-dot c0" /><rect x="390" y="42" class="grid-dot c0" /><rect x="390" y="56" class="grid-dot c0" /><rect x="390" y="70" class="grid-dot c0" /><rect x="390" y="84" class="grid-dot c0" />
+    <rect x="405" y="0" class="grid-dot c0" /><rect x="405" y="14" class="grid-dot c0" /><rect x="405" y="28" class="grid-dot c0" /><rect x="405" y="42" class="grid-dot c0" /><rect x="405" y="56" class="grid-dot c0" /><rect x="405" y="70" class="grid-dot c0" /><rect x="405" y="84" class="grid-dot c0" />
+    <rect x="420" y="0" class="grid-dot c0" /><rect x="420" y="14" class="grid-dot c0" /><rect x="420" y="28" class="grid-dot c0" /><rect x="420" y="42" class="grid-dot c0" /><rect x="420" y="56" class="grid-dot c0" /><rect x="420" y="70" class="grid-dot c0" /><rect x="420" y="84" class="grid-dot c0" />
+    <rect x="435" y="0" class="grid-dot c0" /><rect x="435" y="14" class="grid-dot c0" /><rect x="435" y="28" class="grid-dot c0" /><rect x="435" y="42" class="grid-dot c0" /><rect x="435" y="56" class="grid-dot c0" /><rect x="435" y="70" class="grid-dot c0" /><rect x="435" y="84" class="grid-dot c0" />
+    <rect x="450" y="0" class="grid-dot c0" /><rect x="450" y="14" class="grid-dot c0" /><rect x="450" y="28" class="grid-dot c0" /><rect x="450" y="42" class="grid-dot c0" /><rect x="450" y="56" class="grid-dot c0" /><rect x="450" y="70" class="grid-dot c0" /><rect x="450" y="84" class="grid-dot c0" />
+    <rect x="465" y="0" class="grid-dot c0" /><rect x="465" y="14" class="grid-dot c0" /><rect x="465" y="28" class="grid-dot c0" /><rect x="465" y="42" class="grid-dot c0" /><rect x="465" y="56" class="grid-dot c0" /><rect x="465" y="70" class="grid-dot c0" /><rect x="465" y="84" class="grid-dot c0" />
+    <rect x="480" y="0" class="grid-dot c0" /><rect x="480" y="14" class="grid-dot c0" /><rect x="480" y="28" class="grid-dot c0" /><rect x="480" y="42" class="grid-dot c0" /><rect x="480" y="56" class="grid-dot c0" /><rect x="480" y="70" class="grid-dot c0" /><rect x="480" y="84" class="grid-dot c0" />
+    <rect x="495" y="0" class="grid-dot c0" /><rect x="495" y="14" class="grid-dot c0" /><rect x="495" y="28" class="grid-dot c0" /><rect x="495" y="42" class="grid-dot c0" /><rect x="495" y="56" class="grid-dot c0" /><rect x="495" y="70" class="grid-dot c0" /><rect x="495" y="84" class="grid-dot c0" />
+    <rect x="510" y="0" class="grid-dot c0" /><rect x="510" y="14" class="grid-dot c0" /><rect x="510" y="28" class="grid-dot c0" /><rect x="510" y="42" class="grid-dot c0" /><rect x="510" y="56" class="grid-dot c0" /><rect x="510" y="70" class="grid-dot c0" /><rect x="510" y="84" class="grid-dot c0" />
+    <rect x="525" y="0" class="grid-dot c0" /><rect x="525" y="14" class="grid-dot c0" /><rect x="525" y="28" class="grid-dot c0" /><rect x="525" y="42" class="grid-dot c0" /><rect x="525" y="56" class="grid-dot c0" /><rect x="525" y="70" class="grid-dot c0" /><rect x="525" y="84" class="grid-dot c0" />
+    <rect x="540" y="0" class="grid-dot c0" /><rect x="540" y="14" class="grid-dot c0" /><rect x="540" y="28" class="grid-dot c0" /><rect x="540" y="42" class="grid-dot c0" /><rect x="540" y="56" class="grid-dot c0" /><rect x="540" y="70" class="grid-dot c0" /><rect x="540" y="84" class="grid-dot c0" />
+    <rect x="555" y="0" class="grid-dot c0" /><rect x="555" y="14" class="grid-dot c0" /><rect x="555" y="28" class="grid-dot c0" /><rect x="555" y="42" class="grid-dot c0" /><rect x="555" y="56" class="grid-dot c0" /><rect x="555" y="70" class="grid-dot c0" /><rect x="555" y="84" class="grid-dot c0" />
+    <rect x="570" y="0" class="grid-dot c0" /><rect x="570" y="14" class="grid-dot c0" /><rect x="570" y="28" class="grid-dot c0" /><rect x="570" y="42" class="grid-dot c0" /><rect x="570" y="56" class="grid-dot c0" /><rect x="570" y="70" class="grid-dot c0" /><rect x="570" y="84" class="grid-dot c0" />
+    <rect x="585" y="0" class="grid-dot c0" /><rect x="585" y="14" class="grid-dot c0" /><rect x="585" y="28" class="grid-dot c0" /><rect x="585" y="42" class="grid-dot c0" /><rect x="585" y="56" class="grid-dot c0" /><rect x="585" y="70" class="grid-dot c0" /><rect x="585" y="84" class="grid-dot c0" />
+    <rect x="600" y="0" class="grid-dot c0" /><rect x="600" y="14" class="grid-dot c0" /><rect x="600" y="28" class="grid-dot c0" /><rect x="600" y="42" class="grid-dot c0" /><rect x="600" y="56" class="grid-dot c0" /><rect x="600" y="70" class="grid-dot c0" /><rect x="600" y="84" class="grid-dot c0" />
+    <rect x="615" y="0" class="grid-dot c0" /><rect x="615" y="14" class="grid-dot c0" /><rect x="615" y="28" class="grid-dot c0" /><rect x="615" y="42" class="grid-dot c0" /><rect x="615" y="56" class="grid-dot c0" /><rect x="615" y="70" class="grid-dot c0" /><rect x="615" y="84" class="grid-dot c0" />
+    <rect x="630" y="0" class="grid-dot c0" /><rect x="630" y="14" class="grid-dot c0" /><rect x="630" y="28" class="grid-dot c0" /><rect x="630" y="42" class="grid-dot c0" /><rect x="630" y="56" class="grid-dot c0" /><rect x="630" y="70" class="grid-dot c0" /><rect x="630" y="84" class="grid-dot c0" />
+    <rect x="645" y="0" class="grid-dot c0" /><rect x="645" y="14" class="grid-dot c0" /><rect x="645" y="28" class="grid-dot c0" /><rect x="645" y="42" class="grid-dot c0" /><rect x="645" y="56" class="grid-dot c0" /><rect x="645" y="70" class="grid-dot c0" /><rect x="645" y="84" class="grid-dot c0" />
+    <rect x="660" y="0" class="grid-dot c0" /><rect x="660" y="14" class="grid-dot c0" /><rect x="660" y="28" class="grid-dot c0" /><rect x="660" y="42" class="grid-dot c0" /><rect x="660" y="56" class="grid-dot c0" /><rect x="660" y="70" class="grid-dot c0" /><rect x="660" y="84" class="grid-dot c0" />
+    <rect x="675" y="0" class="grid-dot c0" /><rect x="675" y="14" class="grid-dot c0" /><rect x="675" y="28" class="grid-dot c0" /><rect x="675" y="42" class="grid-dot c0" /><rect x="675" y="56" class="grid-dot c0" /><rect x="675" y="70" class="grid-dot c0" /><rect x="675" y="84" class="grid-dot c0" />
+    <rect x="690" y="0" class="grid-dot c0" /><rect x="690" y="14" class="grid-dot c0" /><rect x="690" y="28" class="grid-dot c0" /><rect x="690" y="42" class="grid-dot c0" /><rect x="690" y="56" class="grid-dot c0" /><rect x="690" y="70" class="grid-dot c2" /><rect x="690" y="84" class="grid-dot c0" />
+
+    <!-- September Peak Velocity -->
+    <rect x="705" y="0" class="grid-dot c3" /><rect x="705" y="14" class="grid-dot c4" /><rect x="705" y="28" class="grid-dot c4" /><rect x="705" y="42" class="grid-dot c0" /><rect x="705" y="56" class="grid-dot c3" /><rect x="705" y="70" class="grid-dot c4" /><rect x="705" y="84" class="grid-dot c4" />
+    <rect x="720" y="0" class="grid-dot c4" /><rect x="720" y="14" class="grid-dot c3" /><rect x="720" y="28" class="grid-dot c4" /><rect x="720" y="42" class="grid-dot c0" /><rect x="720" y="56" class="grid-dot c4" /><rect x="720" y="70" class="grid-dot c3" /><rect x="720" y="84" class="grid-dot c4" />
+  </g>
+
+  <!-- Live Animated Snake Elements Slithering across the Grid -->
+  <rect class="snake-b2" x="0" y="0" />
+  <rect class="snake-b1" x="0" y="0" />
+  <rect class="snake-head" x="0" y="0" />
+
+  <!-- Bottom Legend -->
+  <g transform="translate(680, 162)">
+    <text x="-40" y="9" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">Less</text>
+    <rect x="-14" y="0" width="10" height="10" rx="2" fill="#161b22" />
+    <rect x="0" y="0" width="10" height="10" rx="2" fill="#0e4429" />
+    <rect x="14" y="0" width="10" height="10" rx="2" fill="#006d32" />
+    <rect x="28" y="0" width="10" height="10" rx="2" fill="#26a641" />
+    <rect x="42" y="0" width="10" height="10" rx="2" fill="#39d353" />
+    <text x="58" y="9" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" fill="#64748b">More</text>
+  </g>
+</svg>
